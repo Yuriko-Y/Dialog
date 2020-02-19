@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dialog.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="js/dialog.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="content">
+        <button class="js-modal-open" href="">登録</button>
+    </div>
+    <div class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+            <h1>Qiita記事の登録</h1>
+            <p>URLの入力とカテゴリの選択をしてください</p>
+
+            <form action="" method="post">
+
+
+                <div class="group">
+                    <label for="text3" id="l_text3">URL</label>
+                    <input id="text3" type="text" placeholder="QiitaのURLを入力する">
+                    <div class="text_underline"></div>
+                </div>
+
+
+                <div class="pulldown_menu">
+
+                    <select name="category" class="option_development">　
+                        <option value="">開発</option>
+                        <option value="">Java</option>
+                        <option value="">JavaSilver</option>
+                        <option value="">Java</option>
+
+                    </select>
+
+                    <select name="category">
+                        <option value="">構築</option>
+                        <option value="">linux</option>
+                    </select>
+
+
+                    <select name="category">
+                        <option value="">DB</option>
+                        <option value="">MySQL</option>
+                    </select>
+
+                    <select name="category">
+                        <option value="">その他</option>
+                    </select>
+
+                </div>
+
+                <div>
+                    <input type="submit" value="登録">
+                    <button class="js-modal-close" href="">閉じる</button>
+                </div>
+
+            </form>
+
+
+
+        </div>
+        <!--modal__inner-->
+    </div>
+    <!--modal-->
+
+</body>
+
+</html>
