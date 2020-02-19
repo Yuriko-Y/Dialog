@@ -30,6 +30,9 @@
     width: 60%;
     height: 60%;
 }
+.modal__title{
+    font-weight: 300;
+}
 .pulldown_menu{
     display: flex;
 
