@@ -9,65 +9,54 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="js/dialog.js"></script>
+    <script src="js/register.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <!-- 登録ボタン -->
-    <div class="content">
-        <button class="js-modal-open" href="">登録</button>
-    </div>
+
+    <button class="js-modal-open" href="">登録</button>
+
     <!-- モーダルの中身 -->
     <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
-            <h1　class="modal__title">Qiita記事の登録</h1>
-            <p>URLの入力とカテゴリの選択をしてください</p>
+            <p id="modal__title">Qiita記事の登録</p>
 
-            <form action="" method="post">
+            <form action="/MiitaShow/HomeServlet" method="post" name="registerForm">
+                URL:<input type="url" name="registerUrl" size="40" placeholder="https://qiita.com" pattern="https://.*"
+                    required><br>
 
+                <!--選択肢その1-->
+                <select name="mainCategory" id="selected__category" onchange="selected()">
+                    <option value="">カテゴリーの選択</option>
+                    <option value="development">開発</option>
+                    <option value="construction">構築</option>
+                    <option value="db">DB</option>
+                    <option value="extra">その他</option>
+                </select>
 
-                <div class="group">
-                    <label for="text3" id="l_text3">URL</label>
-                    <input id="text3" type="text" placeholder="QiitaのURLを入力する">
-                    <div class="text_underline"></div>
-                </div>
-
-
-                <div class="pulldown_menu">
-
-                    <select name="category" class="option_development">　
-                        <option value="">開発</option>
-                        <option value="">Java</option>
-                        <option value="">JavaSilver</option>
-                        <option value="">Java</option>
-
-                    </select>
-
-                    <select name="category">
-                        <option value="">構築</option>
-                        <option value="">linux</option>
-                    </select>
+                <!--選択肢その2（選択肢その1の項目によって変化）-->
+                <select name="subCategory">
+                </select>
 
 
-                    <select name="category">
-                        <option value="">DB</option>
-                        <option value="">MySQL</option>
-                    </select>
 
-                    <select name="category">
-                        <option value="">その他</option>
-                    </select>
 
-                </div>
+                <!-- Java<input type="radio" name="registerCategory" value="Java">
+                Android<input type="radio" name="registerCategory" value="Android">
+                Linux<input type="radio" name="registerCategory" value="Linux">
+                MySQL<input type="radio" name="registerCategory" value="MySQL"> -->
 
-                <div>
-                    <input type="submit" value="登録">
-                    <button class="js-modal-close" href="">閉じる</button>
-                </div>
+                <br>
+                Pass:<input type="password" name="pass" size="5"><br>
+
+
+                <button class="js-modal-close" href="">閉じる</button>
+                <input type="submit" value="登録" onclick="return checkRegister();">
 
             </form>
-
 
 
         </div>

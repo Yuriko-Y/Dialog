@@ -1,12 +1,4 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-.content{
-    margin: 0 auto;
-    padding: 40px;
-}
+
 .modal{
     display: none;
     height: 100vh;
@@ -21,7 +13,7 @@
     width: 100%;
 }
 .modal__content{
-    background: rgb(250, 226, 198);
+    background-image: linear-gradient(-30deg, #FA8A6E, #FFAF63);
     left: 50%;
     padding: 40px;
     position: absolute;
@@ -30,51 +22,9 @@
     width: 60%;
     height: 60%;
 }
-.modal__title{
-    font-weight: 300;
-}
-.pulldown_menu{
-    display: flex;
-
-}
-#text3{
-    font-size: 16px;
-    width: 100%;
-    border: none;
-    outline: none;
-    padding-bottom: 8px;
-    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
-}
-
-.text_underline{
-    position: relative; /*.text_underline::beforeの親要素*/
-    border-top: 1px solid #c2c2c2; /*text3の下線*/
-}
-
-/*共通のstyle*/
-.text_underline::before,
-.text_underline::after{
-    position: absolute; 
-    bottom: 0px; /*中央配置*/
-    width: 0px; /*アニメーションで0pxから50%に*/
-    height: 1px; /*高さ*/
-    content: '';
-    background-color: #3be5ae; /*アニメーションの色*/
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-}
-
-/*中央から右へのアニメーション*/
-.text_underline::before{
-    left: 50%; /*中央配置*/
-}
-
-/*中央から左へのアニメーション*/
-.text_underline::after{ 
-    right: 50%; /*中央配置*/
-}
-
-#text3:focus + .text_underline::before,
-#text3:focus + .text_underline::after{
-    width: 50%;
+#modal__title{
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+  
 }
